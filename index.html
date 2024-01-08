@@ -1,0 +1,115 @@
+<!doctype html>
+<html lang="ko">
+<head>
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=3.0, minimum-scale=1.0, user-scalable=yes" />
+    <title>Warak Studio 소개</title>
+    <link rel="stylesheet" type="text/css" href="./assets/common.css">
+</head>
+
+<body>
+
+<nav>
+    <a href="#login">로그인</a>
+    <a href="#common">서비스설정</a>
+    <a href="#global">전역설정</a>
+    <a href="#builder">맵빌더</a>
+    <a href="#sources">소스관리</a>
+    <a href="#boards">게시판설정</a>
+</nav>
+
+<div class="contents_wrap">
+    <header>
+        <h1>Warak Studio</h1>
+        <strong><a href="https://warak.studio/" target="_blank" title="새창으로 열기">https://warak.studio <em></em></a></strong>
+        <p>
+            키보드, 마우스, 터치 조작을 모두 이용하여 캐릭터 이동과 맵 이동이 가능한<br>
+            RPG게임 컨셉의 음악가 포트폴리오 사이트.<br>
+            프론트에서 접근과 조작 가능한 맵과 이벤트 등의 모든 요소는 관리자 모드의 빌더를 이용해 구성 가능하도록 했다.
+        </p>
+        <img src="./assets/wrstudio.jpg" alt="warak.studio">
+        <dl>
+            <dt>PHP / Codeigniter 4</dt>
+            <dd>
+                프레임웍 선정에 있어 최초에 라라벨을 고려 하였다가,<br>
+                서비스 규모과 기능으로 보아 코드이그나이터가 개발과 운영에 있어 더욱 효율적일 것으로 판단함.
+            </dd>
+            <dt>AWS DynamoDB</dt>
+            <dd>
+                웹서버와 DB 모두 AWS 사용.<br>
+                SQL을 사용하지 않고 DynamoDB를 사용하며, 코드이그나이터의 캐싱 라이브러리를 활용해 DB에 직접 쿼리를 최소화 시킴.
+            </dd>
+            <dt>HTML5 Canvas</dt>
+            <dd>
+                RPG게임과 같이 캐릭터를 조작해야 하는 기획 특성 상 Canvas에 웹게임과 유사한 형태로 구현.<br>
+                별도의 게임 엔진을 사용하지 않고 순수 JS로 구현했다.
+            </dd>
+            <dt>JS ES6</dt>
+            <dd>유지보수가 빈번하지 않을 서비스 특성을 고려해, 작업 숙련도가 가장 높고 퍼포먼스가 높은 Vanilla JS 이용</dd>
+        </dl>
+    </header>
+
+    <h1>Warak Studio 관리자모드 소개</h1>
+
+    <section id="login">
+        <h2>관리자 로그인</h2>
+        <p>
+            IP whitelist 등록과 비밀번호 입력의 2중 보안을 적용했다.<br>
+            특정 경로의 페이지에 접근 후, 토큰 파일을 업로드해 접속 IP를 whitelist에 등록해야 관리자 페이지의 로그인 폼에 접근이 가능함.
+        </p>
+        <div class="posRel">
+            <div class="imgWrap"><img src="./assets/01.login.a.jpg" alt="IP whitelist 등록 페이지"></div>
+            <div class="imgWrap"><img src="./assets/01.login.b.jpg" alt="IP whitelist 등록 페이지"></div>
+        </div>
+    </section>
+
+    <section id="common">
+        <h2>서비스 설정</h2>
+        <p>
+            패스워드, 화이트리스트, SMTP, favicon 등등 여러가지를 설정 가능하게 하여, 이용자가 개발자를 통하지 않고 최대한 스스로 운영 가능하도록 했다.
+        </p>
+        <div class="imgWrap"><img src="./assets/02.admin.jpg" alt="관리자 메인 페이지"></div>
+    </section>
+
+    <section id="global">
+        <h2>전역 설정</h2>
+        <p>
+            캔버스의 크기, 캐릭터 디자인과 이동속도 등 전역설정.<br>
+            클라이언트 요구에 따라 종/횡 이동속도를 다르게 지정 가능하도록 함.
+        </p>
+        <div class="imgWrap"><img src="./assets/04.global.jpg" alt="전역설정"></div>
+    </section>
+
+    <section id="builder">
+        <h2>맵 빌더</h2>
+        <p>
+            각 맵 생성/수정, 오브젝트 배치, 충돌영역 지정, 사운드 재생, 애니메이션 재생, 페이지 팝업 등의 이벤트를 모두 설정 가능하게 함.
+        </p>
+        <div class="posRel">
+            <div class="imgWrap"><img src="./assets/05.map.a.jpg" alt="맵 빌더"></div>
+            <div class="imgWrap"><img src="./assets/05.map.b.jpg" alt="맵 빌더"></div>
+            <div class="imgWrap"><img src="./assets/05.map.c.jpg" alt="맵 빌더"></div>
+        </div>
+    </section>
+
+    <section id="sources">
+        <h2>소스 관리</h2>
+        <p>
+            각 맵에 사용될 배경 이미지, 배치할 수 있는 오브젝트, 효과음 파일 등등을 이용자가 직접 관리 가능하도록 함.
+        </p>
+        <div class="imgWrap"><img src="./assets/03.source.jpg" alt="소스 관리"></div>
+    </section>
+
+    <section id="boards">
+        <h2>게시판 설정</h2>
+        <p>
+            각 게시판의 설정과 사용 필드도, 요구조건 안에서 이용자가 최대한 유연히 운영 가능하도록 했다.<br>
+            DynamoDB를 사용하니 이런 식으로 활성 컬럼을 임의로 설정하는 방식이 효율적으로 적용 가능했다.
+        </p>
+        <div class="imgWrap"><img src="./assets/06.board.jpg" alt="게시판 설정"></div>
+    </section>
+</div>
+
+</body>
+</html>
